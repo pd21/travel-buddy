@@ -6,22 +6,18 @@ const allReducer = (state= items,action) => {
             ...state.items,
             action.payload,
         ]
-  
-        state = {
-            items: items
+        return  {
+          items
         }
-
-        return state
 
     }
 
     if (action.type === 'REMOVE-ITEM'){
         let items = state.items.filter(x => x.id !== action.id)
 
-        state = {
+        return {
             items
         }
-        return state
     }
 
     if (action.type === 'TOGGLE-ITEM'){
@@ -31,10 +27,10 @@ const allReducer = (state= items,action) => {
            }
            return x
         })
-        state = {
+        
+        return {
             items
         }
-        return state
     }
 
     if (action.type === 'MARK-UNPACKED'){
@@ -42,10 +38,9 @@ const allReducer = (state= items,action) => {
             x.packed = false
             return x
         })
-        state = {
+        return {
             items
         }
-        return state
     }
    
     return state

@@ -16,7 +16,6 @@ function App() {
   const packedItems = items.filter(x => x.packed)  
 
   const dispatch = useDispatch()
-
   return (
     <div className="App">
       <Title>Happy Travel !</Title>
